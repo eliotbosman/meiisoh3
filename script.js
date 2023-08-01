@@ -62,18 +62,18 @@ function addNewImage() {
 // Function to create and position the initial images
 function createImages() {
   const imageUrls = [
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
-    'img/Captura de ecrã 2021-01-22, às 17.22.32.png',
+    'JS_Test_IMG1',
+    'JS_Test_IMG2',
+    'JS_Test_IMG3',
+    'JS_Test_IMG4',
+    'JS_Test_IMG5',
+    'JS_Test_IMG6',
+    'JS_Test_IMG1',
+    'JS_Test_IMG2',
+    'JS_Test_IMG3',
+    'JS_Test_IMG4',
+    'JS_Test_IMG5',
+    'JS_Test_IMG6',
   ];
 
   for (let i = 0; i < numberOfImages; i++) {
@@ -87,21 +87,21 @@ function createImages() {
           hideGalleryContainer();
         });
 
-    image.onload = () => {
-      const position = getRandomPosition();
-
-      // Adjust image position if it goes outside the container
-      if (position.x + image.width > galleryContainer.clientWidth) {
-        position.x = galleryContainer.clientWidth - image.width;
-      }
-
-      if (position.y + image.height > galleryContainer.clientHeight) {
-        position.y = galleryContainer.clientHeight - image.height;
-      }
-
-      image.style.left = `${position.x}px`;
-      image.style.top = `${position.y}px`;
-    };
+        image.onload = () => {
+          const position = getRandomPosition();
+    
+          // Adjust image position if it goes outside the container
+          if (position.x + image.width > galleryContainer.clientWidth) {
+            position.x = galleryContainer.clientWidth - image.width;
+          }
+    
+          if (position.y + image.height > galleryContainer.clientHeight) {
+            position.y = galleryContainer.clientHeight - image.height;
+          }
+    
+          image.style.left = `${position.x}px`;
+          image.style.top = `${position.y}px`;
+        };
 
     galleryContainer.appendChild(image);
   }
